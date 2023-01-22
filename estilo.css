@@ -1,0 +1,6 @@
+.container{
+    display: grid;
+    height: 500px;
+    width: 500px;
+    background-color: grey;
+}
