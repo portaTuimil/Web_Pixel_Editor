@@ -43,3 +43,9 @@ reset.addEventListener('click', ()=>{
         mouseOn = false;
     })
 });
+
+//Don't drag!!!!
+container.addEventListener('mousedown', e => { //prevent dragging
+    e.preventDefault();
+    if(e.button === 0) enableMouseDown();
+});
