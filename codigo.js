@@ -13,24 +13,26 @@ function makeGrid(columns, rows){
 
     }
 }
-makeGrid(16,16);
+makeGrid(24,24);
 
 //Función de dibujo:
 let mouseOn = false;
-//container.addEventListener('mousedown', ()=> {mouseOn === false? mouseOn = true: mouseOn = false;});
+
 container.addEventListener("mousedown", function() {
-    mouseDown = true;
+    mouseOn = true;
 });
   
 container.addEventListener("mouseup", function() {
-    mouseDown = false;
+    mouseOn = false;
 });
 
+let mode = 'normal';
+let color = 'rgb(1,1,1)'
 
 let pixels = document.querySelectorAll('.box');
 pixels.forEach(pixel=> pixel.addEventListener('mouseover', ()=> {
     if (mouseOn === true){
-        pixel.setAttribute('style', 'background: grey;');
+        pixel.setAttribute('style', `background: ${color};`);
 }}));
 
 //Reset:
@@ -38,5 +40,6 @@ let reset = document.querySelector('#Clear');
 reset.addEventListener('click', ()=>{
     pixels.forEach(pixel =>{
         pixel.setAttribute('style', 'background: white;');
+        mouseOn = false;
     })
 });
