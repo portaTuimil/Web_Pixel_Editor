@@ -28,10 +28,48 @@ body{
 .box:hover{
     background-color: red;
 }
-.buttons{
+
+h1{
+    color:rgb(140, 175, 200);
+    font-size: 50px;
+}
+
+.button-container{
     display: flex;
-    align-items: center;
-    width: 100%;
-    justify-content: center;
+    width: 20%;
     gap: 5%;
+    flex-direction: column;
+    
+}
+
+#GridSize{
+    background-color: unset;
+    color: white;
+    border-color: grey;
+    margin-bottom: 10px;
+    width: 50%;
+}
+
+#Random{
+    background-color: unset;
+    color: white;
+    border-color: grey;
+    margin-bottom: 10px;
+    width: 50%;
+}
+
+#Clear{
+    background-color: unset;
+    color: white;
+    border-color: grey;
+    margin-bottom: 10px;
+    width: 50%;
+}
+
+#Colour{
+    background-color: unset;
+    color: white;
+    border-color: grey;
+    margin-bottom: 10px;
+    width: 50%;
 }
