@@ -3,20 +3,34 @@ body{
     background-attachment: fixed;
     background-repeat: no-repeat;
     background-size: cover;
-}
-
-.container{
-    display: grid;
-    height: 600px;
-    width: 600px;
-    border: black 5px solid;
-    background-color: white;
+    height: 100vh;
+    margin:0;
+    padding: 0;
 }
 
 .supra-container{
     display: flex;
     justify-content: center;
     align-items: center;
+    height: 100%;
+}
+
+.container{
+    display: grid;
+    height: 700px;
+    width: 700px;
+    border: black 5px solid;
+    background-color: white;
+}
+
+.button-container{
+    display: flex;
+    width: 40%;
+    gap: 5%;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    
 }
 
 .title{
@@ -25,23 +39,16 @@ body{
     align-items: center;
 }
 
-.box:hover{
-    background-color: rgb(220,220,220);
-}
-
 h1{
     color:rgb(140, 175, 200);
     font-size: 50px;
 }
 
-.button-container{
-    display: flex;
-    width: 20%;
-    gap: 5%;
-    flex-direction: column;
-    
+.box:hover{
+    background-color: rgb(220,220,220);
 }
 
+/*Buttons*/
 #GridSize{
     background-color: unset;
     color: white;

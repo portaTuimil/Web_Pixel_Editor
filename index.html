@@ -7,28 +7,27 @@
 </head>
 <body>
 
-<div class = "title">
 
-	<h1>Etch-A-Sketch</h1>
+<div class = "supra-container"> 
+		
+	<div class = "container"></div>
+		
+	<div class="button-container">
 
-
-</div>
-	<div class = "supra-container"> 
-
-		<div class = "container"> 
+		<div class = "title">
+				<h1>Etch-A-Sketch</h1>
 		</div>
 
-			
-		<div class="button-container">
-			<button id = "GridSize">Grid Size</button>
+		<div>
+			<input type = "range" min = "1" max = "100" step = "1" id = "GridSize" value = "24"><p>Grid Size = <output id = "GridSizeValueOutput"></output></p>
 			<button id = "Colour">Colour</button>
 			<button id = "Clear">Clear</button>
 			<button id = "Random">Random</button>
 		</div>
 			
-		</div>
 	</div>
 </div>
+
 	<script src="codigo.js" defer></script>
 </body>
 </html>
