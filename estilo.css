@@ -44,6 +44,11 @@ h1{
     font-size: 50px;
 }
 
+p{
+    color:rgb(140, 175, 200);
+    text-align: center;
+}
+
 .box:hover{
     background-color: rgb(220,220,220);
 }
@@ -54,7 +59,7 @@ h1{
     color: white;
     border-color: grey;
     margin-bottom: 10px;
-    width: 50%;
+    width: 100%;
 }
 
 #Random{
