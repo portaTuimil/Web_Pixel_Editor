@@ -87,7 +87,7 @@ gridSize.addEventListener('mouseup', (event)=> {
 let fill = document.querySelector('#Fill');
 
 fill.addEventListener('click', ()=> {
-    pixels.forEach(pixel =>{
+    document.querySelectorAll('.box').forEach(pixel =>{
         pixel.setAttribute('style', `background: ${colorValue};`);
         mouseOn = false});
 });
