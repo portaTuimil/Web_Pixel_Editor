@@ -28,6 +28,12 @@ container.addEventListener("mouseup", function(e) {
 
 });
 
+window.addEventListener("mouseover", (e)=>{
+    if (e.target.classList != "box"){
+        mouseOn = false;
+    }
+});
+
 let pixels = document.querySelectorAll('.box');
         pixels.forEach(pixel=> pixel.addEventListener('mouseover', ()=> {
             if (mouseOn === true){
