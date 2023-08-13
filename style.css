@@ -178,3 +178,10 @@ input{
         margin: auto;
     }
 }
+
+@media(max-width: 420px){ 
+    h1{
+
+        font-size: 45px;
+    }
+}
