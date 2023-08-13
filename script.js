@@ -18,12 +18,14 @@ makeGrid(24,24);
 //Modes and Mouse State Checker:
 let mouseOn = false;
 
-container.addEventListener("mousedown", function() {
+container.addEventListener("mousedown", function(e) {
     mouseOn = true;
+    e.target.setAttribute('style', `background: ${colorValue};`);
 });
   
-container.addEventListener("mouseup", function() {
+container.addEventListener("mouseup", function(e) {
     mouseOn = false;
+
 });
 
 let pixels = document.querySelectorAll('.box');
