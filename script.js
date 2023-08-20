@@ -84,6 +84,7 @@ gridSize.addEventListener('input', (event)=> {
 
 //New grid generator:
 gridSize.addEventListener('mouseup', (event)=> {
+    (function gridSizeGenerator(){
     GridValue = event.target.value
     GridSizeValueOutput.textContent = GridValue;
     makeGrid(GridValue, GridValue);
@@ -99,6 +100,11 @@ gridSize.addEventListener('mouseup', (event)=> {
     pixels.forEach(pixel =>{
         pixel.setAttribute('style', 'background: white;');
         mouseOn = false});
+    })()
+});
+
+gridSize.addEventListener('touchend', (event)=> {
+    gridSizeGenerator()
 });
 
 //Fill:
