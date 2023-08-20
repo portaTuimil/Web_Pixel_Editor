@@ -28,6 +28,16 @@ container.addEventListener("mouseup", function(e) {
 
 });
 
+container.addEventListener("touchstart", function(e) {
+    mouseOn = true;
+    e.target.setAttribute('style', `background: ${colorValue};`);
+});
+  
+container.addEventListener("touchend", function(e) {
+    mouseOn = false;
+
+});
+
 window.addEventListener("mouseover", (e)=>{
     if (e.target.classList != "box"){
         mouseOn = false;
