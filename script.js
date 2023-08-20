@@ -28,15 +28,23 @@ container.addEventListener("mouseup", function(e) {
 
 });
 
-container.addEventListener("touchstart", function(e) {
-    mouseOn = true;
-    e.target.setAttribute('style', `background: ${colorValue};`);
-});
-  
-container.addEventListener("touchend", function(e) {
-    mouseOn = false;
 
-});
+
+/**//* */
+const handleTouchActions = (event) => {
+    // Get the grid cell element based on the touch event's clientX and clientY
+    // coordinates. If the element is not found or is not a grid cell, return
+    // and do nothing.
+    const targetCell = document.elementFromPoint(event.clientX, event.clientY);
+    if (targetCell === null || !targetCell.classList.contains("box")) {
+      return;
+    }
+  
+    targetCell.setAttribute('style', `background: ${colorValue};`)
+  };
+/**//* */
+
+
 
 window.addEventListener("mouseover", (e)=>{
     if (e.target.classList != "box"){
@@ -83,7 +91,7 @@ gridSize.addEventListener('input', (event)=> {
 });
 
 //New grid generator:
-gridSize.addEventListener('mouseup', (event)=> {
+gridSize.addEventListener('change', (event)=> {
     (function gridSizeGenerator(){
     GridValue = event.target.value
     GridSizeValueOutput.textContent = GridValue;
@@ -101,10 +109,6 @@ gridSize.addEventListener('mouseup', (event)=> {
         pixel.setAttribute('style', 'background: white;');
         mouseOn = false});
     })()
-});
-
-gridSize.addEventListener('touchend', (event)=> {
-    gridSizeGenerator()
 });
 
 //Fill:
