@@ -28,23 +28,21 @@ container.addEventListener("mouseup", function(e) {
 
 });
 
+container.addEventListener('touchmove', ()=>{
+    e.preventDefault();
 
-
-/**//* */
-const handleTouchActions = (event) => {
-    // Get the grid cell element based on the touch event's clientX and clientY
-    // coordinates. If the element is not found or is not a grid cell, return
-    // and do nothing.
-    const targetCell = document.elementFromPoint(event.clientX, event.clientY);
-    if (targetCell === null || !targetCell.classList.contains("box")) {
-      return;
-    }
+    const changedTouch = e.changedTouches[0];
+    const target = document.elementFromPoint(
+      changedTouch.clientX,
+      changedTouch.clientY
+    );
+    currentTouchedDiv = target.id;
   
-    targetCell.setAttribute('style', `background: ${colorValue};`)
-  };
-/**//* */
-
-
+    if (!target.closest('.pixel')) return;
+    if (currentTouchedDiv !== prevTouchedDiv) {
+      prevTouchedDiv = currentTouchedDiv;
+      currentTouchedDiv.setAttribute('style', `background: ${colorValue};`);;
+}});
 
 window.addEventListener("mouseover", (e)=>{
     if (e.target.classList != "box"){
