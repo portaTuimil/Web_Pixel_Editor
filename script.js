@@ -46,6 +46,21 @@ container.addEventListener('touchmove', ()=>{
       currentTouchedDiv.setAttribute('style', `background: ${colorValue};`);;
 }});*/
 
+container.addEventListener("pointerdown", (event) => {
+    isMouseDown = true;
+    handleUserAction(event);
+});
+
+container.addEventListener("pointermove", (event) => {
+    if (isMouseDown) {
+      handleUserAction(event);
+    }
+});
+
+container.addEventListener("pointerup", () => {
+    isMouseDown = false;
+});
+
 const handleUserAction = (event) => {
     if (event.type === "pointerdown") {
       lastCell = null;
