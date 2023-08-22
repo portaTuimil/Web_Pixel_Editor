@@ -28,6 +28,8 @@ container.addEventListener("mouseup", function(e) {
 
 });
 
+
+/*
 container.addEventListener('touchmove', ()=>{
     e.preventDefault();
 
@@ -42,7 +44,32 @@ container.addEventListener('touchmove', ()=>{
     if (currentTouchedDiv !== prevTouchedDiv) {
       prevTouchedDiv = currentTouchedDiv;
       currentTouchedDiv.setAttribute('style', `background: ${colorValue};`);;
-}});
+}});*/
+
+const handleUserAction = (event) => {
+    if (event.type === "pointerdown") {
+      lastCell = null;
+    }
+    
+    if (event.pointerType === "touch") {
+      handleTouchActions(event);
+    }
+};
+
+const handleTouchActions = (event) => {
+    // Get the grid cell element based on the touch event's clientX and clientY
+    // coordinates. If the element is not found or is not a grid cell, return
+    // and do nothing.
+    const targetCell = document.elementFromPoint(event.clientX, event.clientY);
+    if (targetCell === null || !targetCell.classList.contains("grid-square")) {
+      return;
+    }
+  
+    targetCell.setAttribute('style', `background: ${colorValue};`);
+};
+
+
+
 
 window.addEventListener("mouseover", (e)=>{
     if (e.target.classList != "box"){
