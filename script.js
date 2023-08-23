@@ -18,7 +18,7 @@ makeGrid(24,24);
 //Modes and Mouse State Checker:
 let mouseOn = false;
 
-container.addEventListener("mousedown", function(e) {
+/*container.addEventListener("mousedown", function(e) {
     mouseOn = true;
     e.target.setAttribute('style', `background: ${colorValue};`);
 });
@@ -26,13 +26,21 @@ container.addEventListener("mousedown", function(e) {
 container.addEventListener("mouseup", function(e) {
     mouseOn = false;
 
+});*/
+
+
+container.addEventListener("pointerdown", function(e) {
+    mouseOn = true;
+    e.target.setAttribute('style', `background: ${colorValue};`);
+});
+  
+container.addEventListener("pointerup", function(e) {
+    mouseOn = false;
+
 });
 
 
-
-
-
-let isMouseDown;
+/*let isMouseDown;
 container.addEventListener("pointerdown", (event) => {
     isMouseDown = true;
     handleUserAction(event);
@@ -75,7 +83,7 @@ const handleMouseActions = (event) => {
 const handlePenTool = (target) => {
     target.style.backgroundColor = colorValue;
 };
-
+*/
 
 
 
@@ -98,7 +106,7 @@ window.addEventListener("mouseover", (e)=>{
 });
 
 let pixels = document.querySelectorAll('.box');
-        pixels.forEach(pixel=> pixel.addEventListener('mouseover', ()=> {
+        pixels.forEach(pixel=> pixel.addEventListener('pointerover', ()=> {
             if (mouseOn === true){
             pixel.setAttribute('style', `background: ${colorValue};`);
 }}));
