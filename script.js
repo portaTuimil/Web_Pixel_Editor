@@ -18,17 +18,6 @@ makeGrid(24,24);
 //Modes and Mouse State Checker:
 let mouseOn = false;
 
-/*container.addEventListener("mousedown", function(e) {
-    mouseOn = true;
-    e.target.setAttribute('style', `background: ${colorValue};`);
-});
-  
-container.addEventListener("mouseup", function(e) {
-    mouseOn = false;
-
-});*/
-
-
 container.addEventListener("pointerdown", function(e) {
     mouseOn = true;
     e.target.setAttribute('style', `background: ${colorValue};`);
@@ -39,65 +28,22 @@ container.addEventListener("pointerup", function(e) {
 
 });
 
-
-/*let isMouseDown;
-container.addEventListener("pointerdown", (event) => {
-    isMouseDown = true;
-    handleUserAction(event);
-});
-
-container.addEventListener("pointermove", (event) => {
-    if (isMouseDown) {
-      handleUserAction(event);
+container.addEventListener("pointermove", function(e) {
+    if (e.pointerType === "mouse") {;
+    } else if (e.pointerType === "touch") {
+        isTouched(e);
     }
 });
 
-container.addEventListener("pointerup", () => {
-    isMouseDown = false;
-});
+const isTouched = (event) => {
 
-const handleUserAction = (event) => {
-
-    if (event.pointerType === "mouse") {
-      handleMouseActions(event);
-    } else if (event.pointerType === "touch") {
-      handleTouchActions(event);
-    }
-  };
-let lastCell;
-const handleMouseActions = (event) => {
-    // Return if the target cell is not a valid grid square.
-    const targetCell = event.target;
+    const targetCell = document.elementFromPoint(event.clientX, event.clientY);
     if (targetCell === null || !targetCell.classList.contains("box")) {
       return;
     }
   
-    // if the lastCell is the same as the target just return and do nothing
-    if (lastCell === event.target) return;
-  
-    lastCell = event.target;
-    handlePenTool(targetCell);
+    targetCell.setAttribute('style', `background: ${colorValue};`)
 };
-
-
-const handlePenTool = (target) => {
-    target.style.backgroundColor = colorValue;
-};
-*/
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 window.addEventListener("mouseover", (e)=>{
     if (e.target.classList != "box"){
