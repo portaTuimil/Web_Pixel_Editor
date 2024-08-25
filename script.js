@@ -10,7 +10,6 @@ function makeGrid(columns, rows){
         container.style.gridTemplateRows = `repeat(${rows}, 1fr)`;
         container.appendChild(div).classList.add('box');
 
-
     }
 }
 makeGrid(24,24);
@@ -79,14 +78,14 @@ container.addEventListener('mousedown', e => {
 
 //Grid Size (slider update):
 
-let GridSizeValueOutput = document.querySelector('#GridSizeValueOutput')
-let gridSize = document.querySelector('#GridSize')
-GridSizeValueOutput.textContent = 24
+let GridSizeValueOutput = document.querySelector('#GridSizeValueOutput');
+let gridSize = document.querySelector('#GridSize');
+GridSizeValueOutput.textContent = 24;
 
 //Number updater of the slider
 gridSize.addEventListener('input', (event)=> {
-    GridValue = event.target.value
-    GridSizeValueOutput.textContent = GridValue
+    GridValue = event.target.value;
+    GridSizeValueOutput.textContent = GridValue;
 });
 
 //New grid generator:
@@ -119,14 +118,14 @@ fill.addEventListener('click', ()=> {
         mouseOn = false});
 });
 
-//Screenshot
-let downloadButton = document.getElementById('Download')    
+//Screenshot:
+let downloadButton = document.getElementById('Download');
 downloadButton.addEventListener("click", ()=>{
     html2canvas(container).then(canvas=>{
-        const url = canvas.toDataURL('image/png')
-        const a = document.createElement('a')
-        a.setAttribute('download', 'pixelDraw.png')
-        a.setAttribute('href', url)
-        a.click()
+        const url = canvas.toDataURL('image/png');
+        const a = document.createElement('a');
+        a.setAttribute('download', 'pixelDraw.png');
+        a.setAttribute('href', url);
+        a.click();
     });
-})
+});

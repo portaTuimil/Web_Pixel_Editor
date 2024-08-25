@@ -1,28 +1,38 @@
 *{
     font-family: 'Roboto', sans-serif;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+:root{
+    --dark-grey:#212429;
 }
 
 body{
     height: 100vh;
-    margin:0;
-    padding: 0;
-    background-color: #333333;
-}
-
-.supra-container{
+    background-color: var(--dark-grey);
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 70%;
 }
 
 .container{
     display: grid;
-    height: 700px;
-    width: 700px;
+    height: 98vh;
+    width: 98vh;
     background-color: white;
     touch-action: none;
     cursor: crosshair;
+}
+
+.box:hover{
+    background-color: rgb(220,220,220);
+}
+
+.box{
+    touch-action: none;
+    user-select: none;
 }
 
 .button-container{
@@ -33,8 +43,7 @@ body{
     align-items: center;
     justify-content: center;
     height: 60%;
-    margin-top: -15%;
-    
+    margin-bottom: 30px;
 }
 
 .title{
@@ -47,90 +56,22 @@ body{
 
 h1{
     color:white;
-    font-size: 60px;
+    font-size: 4rem;
 }
 
 p{
     color:white;
     text-align: center;
-    font-size: 30px;
+    font-size: 2rem;
     margin-bottom: 0;
 }
 
-.box:hover{
-    background-color: rgb(220,220,220);
-}
-
-.box{
-    touch-action: none;
-    user-select: none;
-}
-
 /*Buttons*/
-#GridSize{
-    background: white;
-    color: white;
-    border-color: white;
-    margin-top: 10px;
-    width: 100%;
-}
-
-#Color{
-    background-color: unset;
-    color: white;
-    border-color: grey;
-    margin-bottom: 15px;
-    border-radius: 5px;
-}
-
-#color-div{
+#color-div, #clear-div, #download-div{
     display: flex;
     justify-content: center;
     align-items: center;
 }
-
-#Clear{
-    background-color: rgb(51,51,51);
-    color: white;
-    border-color: grey;
-    margin-bottom: 15px;
-    border-color: black;
-    border-radius: 5px;
-    font-size: 15px;
-}
-
-#clear-div{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-#Fill{
-    background-color: rgb(51,51,51);
-    color: white;
-    border-color: grey;
-    margin-bottom: 15px;
-    border-color: black;
-    border-radius: 5px;
-    font-size: 15px;
-}
-
-#fill-div{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-input:hover, button:hover{
-    cursor: pointer;
-    scale: 105%;
-}
-
-input{
-    width: 100%;;
-    margin-top: 30px;
-}
-
 #Clear, #Fill, #Download{
     height: 40px;
     border-color: white;
@@ -141,6 +82,24 @@ input{
     margin-top: 30px;
     background-color: white;
     border-style: none;
+}
+
+#GridSize{
+    background: white;
+    color: white;
+    border-color: white;
+    margin-top: 10px;
+    width: 100%;
+}
+
+input:hover, button:hover{
+    cursor: pointer;
+    scale: 105%;
+}
+
+input{
+    width: 100%;;
+    margin-top: 30px;
 }
 
 #Clear:active, #Fill:active{
@@ -163,32 +122,54 @@ input{
     margin-bottom: 0px;
 }
 
+@media(max-width: 1350px){
+    .container{
+        height: 700px;
+        width: 700px;
+    }
+}
+
 @media(max-width: 1200px){
-    .supra-container{
-        flex-direction: column;
+    .container{
+        height: 700px;
+        width: 700px;
     }
 
-    body{
-        height: auto;
+    h1{
+        font-size: 2rem;
+    }
+
+    p{
+        font-size: 1.5rem;
     }
 
     .button-container{
-        margin-top: 30px;
-        height: 400px;
+        width: 30%;
     }
 }
 
-@media(max-width: 800px){
+@media(max-width: 1000px){
     .container{
-        height: 95vw;
-        width: 95vw;
-        margin: auto;
+        height: 600px;
+        width: 600px;
     }
 }
+@media(max-width: 860px){
+    body{
+        flex-direction: column-reverse;
+        height: unset;
+        margin-top: 30px;
+        font-size: 2.5rem;
+    }
 
-@media(max-width: 420px){ 
-    h1{
+    .button-container{
+        width: 100vw;
+        flex-wrap: wrap;
+    }
 
-        font-size: 45px;
+    .container{
+        width: 98vw;
+        height: 98vw;
+        margin-bottom: 1vw;
     }
 }
