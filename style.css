@@ -42,7 +42,7 @@ body{
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    height: 60%;
+    height: 80%;
     margin-bottom: 30px;
 }
 
@@ -67,18 +67,13 @@ p{
 }
 
 /*Buttons*/
-#color-div, #clear-div, #download-div{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
 #Clear, #Fill, #Download{
-    height: 40px;
+    height: 300px;
     border-color: white;
     color: #333333;
     font-size: 20px;
     border-radius: 10px;
-    width: 100%;;
+    width: 300px;
     margin-top: 30px;
     background-color: white;
     border-style: none;
@@ -89,17 +84,17 @@ p{
     color: white;
     border-color: white;
     margin-top: 10px;
-    width: 100%;
+    width: 300px;
+}
+
+input{
+    width: 300px;
+    margin-top: 30px;
 }
 
 input:hover, button:hover{
     cursor: pointer;
     scale: 105%;
-}
-
-input{
-    width: 100%;;
-    margin-top: 30px;
 }
 
 #Clear:active, #Fill:active{
@@ -114,18 +109,17 @@ input{
     -webkit-appearance: none;
     background: none;
     cursor: pointer;
-    height: 80px;
-    padding: 0;
-    width: 80px;
-    border-color: #333333;
-    margin-top: 10px;
-    margin-bottom: 0px;
+    height: 100%;
+    width: 300px;
 }
 
 @media(max-width: 1350px){
     .container{
         height: 700px;
         width: 700px;
+    }
+    #Clear, #Fill, #Download, #GridSize, #Color, input{
+        width: 200px;
     }
 }
 
@@ -142,34 +136,46 @@ input{
     p{
         font-size: 1.5rem;
     }
-
-    .button-container{
-        width: 30%;
-    }
 }
 
-@media(max-width: 1000px){
+@media(max-width: 1180px){
     .container{
         height: 600px;
         width: 600px;
     }
 }
+
+@media(max-width: 1180px){
+    .button-container{
+        width: 30%;
+    }
+}
+
 @media(max-width: 860px){
     body{
         flex-direction: column-reverse;
         height: unset;
-        margin-top: 30px;
-        font-size: 2.5rem;
+        margin-top: 10px;
     }
 
     .button-container{
-        width: 100vw;
-        flex-wrap: wrap;
+        width: 98vw;
+        height: 400px;
+        gap: 10px;
     }
 
     .container{
         width: 98vw;
         height: 98vw;
         margin-bottom: 1vw;
+    }
+
+    #Clear, #Fill, #Download, #GridSize, #Color, input{
+        width: 48vw;
+        height: 40px;
+    }
+
+    .title{
+        width: 100vw;
     }
 }
