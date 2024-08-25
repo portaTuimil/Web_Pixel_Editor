@@ -118,3 +118,21 @@ fill.addEventListener('click', ()=> {
         pixel.setAttribute('style', `background: ${colorValue};`);
         mouseOn = false});
 });
+
+//Screenshot
+function Download(url){
+   
+    console.log(a)
+    a.href = url
+    a.download = "File.png"
+}; 
+
+
+let a = document.getElementById('download')    
+a.addEventListener("click", ()=>{
+    html2canvas(container).then(can=>{
+        const url = can.toDataURL()
+        console.log(url)
+        Download(url)
+    });
+})
