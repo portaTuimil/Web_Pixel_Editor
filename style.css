@@ -131,7 +131,7 @@ input{
     margin-top: 30px;
 }
 
-#Clear, #Fill{
+#Clear, #Fill, #Download{
     height: 40px;
     border-color: white;
     color: #333333;
