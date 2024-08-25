@@ -120,19 +120,11 @@ fill.addEventListener('click', ()=> {
 });
 
 //Screenshot
-function Download(url){
-   
-    console.log(a)
-    a.href = url
-    a.download = "File.png"
-}; 
-
-
-let a = document.getElementById('download')    
-a.addEventListener("click", ()=>{
+let downloadButton = document.getElementById('download')    
+downloadButton.addEventListener("click", ()=>{
     html2canvas(container).then(can=>{
         const url = can.toDataURL()
-        console.log(url)
-        Download(url)
+        downloadButton.href = url
+        downloadButton.download = "File.png"
     });
 })
